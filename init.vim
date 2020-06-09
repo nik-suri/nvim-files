@@ -6,8 +6,14 @@ source ~/.config/nvim/plugins.vim
 "Mode Settings
 
 " set vim cursor
-set guicursor=a:ver10-blinkon1
-au VimLeave * set guicursor=a:hor10-blinkon0
+let term_program=$TERM_PROGRAM
+
+if term_program == 'iTerm.app'
+  set guicursor=a:block-blinkon0
+else
+  set guicursor=a:ver10-blinkon0
+  au VimLeave * set guicursor=a:hor10-blinkon0
+endif
 
 " Remap leader key to ,
 let g:mapleader=','
