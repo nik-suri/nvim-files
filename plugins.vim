@@ -19,6 +19,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'jeetsukumaran/vim-buffergator'
 Plug 'rstacruz/vim-closer'
 Plug 'tpope/vim-eunuch'
+Plug 'yggdroot/indentLine'
 
 " Initialize plugin system
 call plug#end()
