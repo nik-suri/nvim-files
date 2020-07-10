@@ -1,13 +1,19 @@
 scriptencoding utf-8
 source ~/.config/nvim/plugins.vim
 
+let term_program=$TERM_PROGRAM
+
+" GLOBAL HOSTS
+if term_program == 'iTerm.app'
+  " we are using my mac
+  let g:python3_host_prog = '/Users/Nikhil/.pyenv/versions/nvim3/bin/python'
+endif
+
 " GENERAL EDITING
 
 "Mode Settings
 
 " set vim cursor
-let term_program=$TERM_PROGRAM
-
 if term_program == 'iTerm.app'
   set guicursor=a:block-blinkon0
 else
