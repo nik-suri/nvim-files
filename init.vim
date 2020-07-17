@@ -79,7 +79,7 @@ autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
 " ctrlp
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|\.git'
 
 " nerdtree
 let NERDTreeShowHidden=1

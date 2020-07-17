@@ -1,3 +1,4 @@
 {
-  "python.jediEnabled": false
+  "python.jediEnabled": false,
+  "java.home": "/Library/Java/JavaVirtualMachines/openjdk-14.0.1.jdk/Contents/Home"
 }
