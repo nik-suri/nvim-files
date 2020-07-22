@@ -3,15 +3,18 @@ source ~/.config/nvim/plugins.vim
 
 let term_program=$TERM_PROGRAM
 
-" GLOBAL HOSTS
+" ==================== "
+" === GLOBAL HOSTS === "
+" ==================== "
+
 if term_program == 'iTerm.app'
   " we are using my mac
   let g:python3_host_prog = '/Users/Nikhil/.pyenv/versions/nvim3/bin/python'
 endif
 
-" GENERAL EDITING
-
-"Mode Settings
+" ======================= "
+" === GENERAL EDITING === "
+" ======================= "
 
 " set vim cursor
 if term_program == 'iTerm.app'
@@ -58,9 +61,12 @@ set cmdheight=1
 " Shows up in preview window when airline is disabled if not
 set noruler
 
-" PLUGINS
+" ======================= "
+" === PLUGIN SETTINGS === "
+" ======================= "
 
 " === Coc.nvim === "
+
 " use <tab> for trigger completion and navigate to next complete item
 function! s:check_back_space() abort
   let col = col('.') - 1
@@ -75,17 +81,24 @@ inoremap <silent><expr> <TAB>
 "Close preview window when completion is done.
 autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 
-" Prettier
+" === Prettier ===
+
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
-" ctrlp
+" === CtrlP ===
+
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|\.git'
 
-" nerdtree
+" === NERDTree ===
+
 let NERDTreeShowHidden=1
 let g:NERDTreeIgnore = ['^\.DS_Store$', '^tags$', '\.git$[[dir]]', '\.idea$[[dir]]', '\.sass-cache$']
+" open automatically when vim starts up if no files specified
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
-" airline
+" === Airline ===
+
 let g:airline_extensions = ['branch', 'hunks', 'coc']
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 let g:airline_powerline_fonts=1
@@ -100,10 +113,13 @@ let g:airline#extensions#default#layout = [['a', 'b', 'c'], ['x', 'z', 'warning'
 let g:airline#extensions#hunks#enabled=0
 let g:airline#extensions#tabline#enabled = 1
 
-" signify
+" === signify ===
+
 let g:signify_sign_delete = '-'
 
-" UI SETTINGS
+" =================== "
+" === UI SETTINGS === "
+" =================== "
 
 " Enable true color support
 set termguicolors
@@ -117,12 +133,13 @@ set winbl=10
 set background=dark
 colorscheme palenight
 
-" MAPPINGS
+" ================ "
+" === MAPPINGS === "
+" ================ "
 
-nmap <C-n> :NERDTreeToggle<CR>
+nmap <leader>n :NERDTreeToggle<CR>
 nmap <leader>f :NERDTreeFind<CR>
 nmap <leader>sw :StripWhitespace<CR>
 
-" === Search shorcuts === "
-"   <leader>/ - Clear highlighted search terms while preserving history
+" Clear highlighted search terms while preserving history
 nmap <silent> <leader>/ :nohlsearch<CR>
