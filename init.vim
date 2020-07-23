@@ -96,22 +96,20 @@ let g:NERDTreeIgnore = ['^\.DS_Store$', '^tags$', '\.git$[[dir]]', '\.idea$[[dir
 " open automatically when vim starts up if no files specified
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" close vim automatically is only window left is NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " === Airline ===
 
-let g:airline_extensions = ['branch', 'hunks', 'coc']
+let g:airline#extensions#hunks#enabled = 1
+let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 let g:airline_powerline_fonts=1
 let g:airline_theme = "palenight"
-" Update section z to just have line number
-let g:airline_section_z = airline#section#create(['linenr'])
 " Do not draw separators for empty sections (only for the active window) >
 let g:airline_skip_empty_sections = 1
 " Custom setup that removes filetype/whitespace from default vim airline bar
 let g:airline#extensions#default#layout = [['a', 'b', 'c'], ['x', 'z', 'warning', 'error']]
-" Don't show git changes to current file in airline
-let g:airline#extensions#hunks#enabled=0
-let g:airline#extensions#tabline#enabled = 1
 
 " === signify ===
 
