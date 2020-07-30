@@ -158,3 +158,6 @@ nmap <leader>sw :StripWhitespace<CR>
 
 " Clear highlighted search terms while preserving history
 nmap <silent> <leader>/ :nohlsearch<CR>
+
+" Map <Esc> to exit terminal-mode
+tnoremap <Esc> <C-\><C-n>
