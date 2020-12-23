@@ -63,5 +63,8 @@ Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 " python pep8 indentation style
 Plug 'Vimjas/vim-python-pep8-indent'
 
+" ftl syntax highlighting
+Plug 'andreshazard/vim-freemarker'
+
 " Initialize plugin system
 call plug#end()
