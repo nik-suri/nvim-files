@@ -45,6 +45,7 @@ set smartcase
 
 " Tab formatting
 set softtabstop=2 shiftwidth=2 expandtab
+autocmd Filetype javascript set softtabstop=2 shiftwidth=2
 autocmd Filetype python set softtabstop=4 shiftwidth=4
 autocmd Filetype java set softtabstop=4 shiftwidth=4
 
