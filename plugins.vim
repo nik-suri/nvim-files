@@ -66,5 +66,8 @@ Plug 'Vimjas/vim-python-pep8-indent'
 " ftl syntax highlighting
 Plug 'andreshazard/vim-freemarker'
 
+" go support
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
 " Initialize plugin system
 call plug#end()
