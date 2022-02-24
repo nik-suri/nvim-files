@@ -20,8 +20,8 @@ endif
 if term_program == 'iTerm.app' || term_program == 'Hyper'
   set guicursor=a:block-blinkon0
 else
-  set guicursor=a:ver10-blinkon0
-  au VimLeave * set guicursor=a:hor10-blinkon0
+  set guicursor=a:block-blinkon0
+  au VimLeave * set guicursor=a:block-blinkon1
 endif
 
 " Remap leader key to ,
