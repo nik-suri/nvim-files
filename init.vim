@@ -7,7 +7,7 @@ let term_program=$TERM_PROGRAM
 " === GLOBAL HOSTS === "
 " ==================== "
 
-if term_program == 'iTerm.app'
+if term_program == 'iTerm.app' || term_program == 'Hyper'
   " we are using my mac
   let g:python3_host_prog = '/Users/Nikhil/.pyenv/versions/nvim3/bin/python'
 endif
@@ -17,7 +17,7 @@ endif
 " ======================= "
 
 " set vim cursor
-if term_program == 'iTerm.app'
+if term_program == 'iTerm.app' || term_program == 'Hyper'
   set guicursor=a:block-blinkon0
 else
   set guicursor=a:ver10-blinkon0
