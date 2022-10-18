@@ -10,6 +10,8 @@ let term_program=$TERM_PROGRAM
 if term_program == 'iTerm.app' || term_program == 'Hyper'
   " we are using my mac
   let g:python3_host_prog = '/Users/Nikhil/.pyenv/versions/nvim3/bin/python'
+else
+  let g:python3_host_prog = '/home/surin/.pyenv/versions/nvim3/bin/python'
 endif
 
 " ======================= "
