@@ -1,5 +1,4 @@
 {
   "python.jediEnabled": false,
-  "java.home": "/Library/Java/JavaVirtualMachines/openjdk-14.0.1.jdk/Contents/Home",
-  "java.enabled": false
+  "java.home": "/usr/lib/jvm/java-11-openjdk-amd64/bin/java"
 }
